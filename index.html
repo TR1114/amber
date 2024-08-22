@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Creative Studio</title>
+
+    <!-- Password Prompt Script -->
     <script>
-        <title>Under Construction</title>
-        const password = prompt('Enter password to access the site:');
-        if (password !== 'yourpassword') { // Replace 'yourpassword' with your actual password
-            window.location.href = 'login.html';
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const password = prompt('Enter password to access the site:');
+            if (password !== 'yourpassword') { // Replace 'yourpassword' with your actual password
+                window.location.href = 'login.html';
+            }
+        });
     </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -280,7 +284,6 @@
                     <button class="btn" onclick="openDetails()">Learn More</button>
                 </div>
             </div>
-            <!-- Add other portfolio items here if needed -->
         </div>
     </section>
 
@@ -310,7 +313,6 @@
             <a href="https://www.instagram.com/amber.creativestudio" target="_blank">
                 <img src="images/instagram-icon.png" alt="Instagram">
             </a>
-            <!-- Add other social media icons here if needed -->
         </div>
     </section>
 
