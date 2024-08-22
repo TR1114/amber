@@ -112,11 +112,33 @@
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: left;
+            position: relative;
         }
 
         .portfolio-item img {
             max-width: 100%;
             border-radius: 8px;
+        }
+
+        .portfolio-item:hover .project-details {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .project-details {
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            transform: translateY(10px);
         }
 
         .contact form {
@@ -227,21 +249,16 @@
     <section id="portfolio" class="portfolio">
         <h2>Our Work</h2>
         <div class="portfolio-items">
-            <div class="portfolio-item">
-                <img src="images/portfolio1.jpg" alt="Project 1">
-                <h3>Project 1</h3>
-                <p>A description of the project goes here.</p>
+            <div class="portfolio-item" id="eversafe-project">
+                <img src="images/portfolio1.png" alt="Eversafe UK Limited Logo">
+                <h3>Eversafe UK Limited</h3>
+                <p>We created a fully functioning website in less than 4 weeks and designed branded business cards for Eversafe UK Limited.</p>
+                <div class="project-details">
+                    <p>Eversafe UK Limited offers comprehensive fire protection services. We developed a responsive and modern website that aligns with their brand identity and created professional business cards to strengthen their brand presence.</p>
+                    <a href="https://www.eversafeuk.co.uk" target="_blank" class="btn">Visit Eversafe UK</a>
+                </div>
             </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio2.jpg" alt="Project 2">
-                <h3>Project 2</h3>
-                <p>A description of the project goes here.</p>
-            </div>
-            <div class="portfolio-item">
-                <img src="images/portfolio3.jpg" alt="Project 3">
-                <h3>Project 3</h3>
-                <p>A description of the project goes here.</p>
-            </div>
+            <!-- Add other portfolio items here if needed -->
         </div>
     </section>
 
