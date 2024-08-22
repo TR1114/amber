@@ -112,29 +112,49 @@
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: left;
-            position: relative;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .portfolio-item img {
-            max-width: 100%;
+            max-width: 50%;
             border-radius: 8px;
+            display: block;
         }
 
-        .portfolio-item .project-details {
-            position: absolute;
-            bottom: 0;
-            left: 100%;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
+        .portfolio-item .project-summary {
+            flex-grow: 1;
+            padding-left: 20px;
+        }
+
+        .details-panel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            transition: right 0.3s ease;
+        }
+
+        .details-content {
             padding: 20px;
-            border-radius: 8px 0 0 8px;
-            transition: all 0.3s ease;
         }
 
-        .portfolio-item:hover .project-details {
-            left: 0;
+        .close-btn {
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .details-panel.open {
+            right: 0;
         }
 
         .contact form {
@@ -194,7 +214,7 @@
         }
 
         .social-icons img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
+            transform: scale(1.1);
         }
 
         footer {
@@ -247,16 +267,25 @@
         <div class="portfolio-items">
             <div class="portfolio-item" id="eversafe-project">
                 <img src="images/portfolio1.png" alt="Eversafe UK Limited Logo">
-                <h3>Eversafe UK Limited</h3>
-                <p>We created a fully functioning website in less than 4 weeks and designed branded business cards for Eversafe UK Limited.</p>
-                <div class="project-details">
-                    <p>Eversafe UK Limited offers comprehensive fire protection services. We developed a responsive and modern website that aligns with their brand identity and created professional business cards to strengthen their brand presence.</p>
-                    <a href="https://www.eversafeuk.co.uk" target="_blank" class="btn">Visit Eversafe UK</a>
+                <div class="project-summary">
+                    <h3>Eversafe UK Limited</h3>
+                    <p>We created a fully functioning website in less than 4 weeks and designed branded business cards.</p>
+                    <button class="btn" onclick="openDetails()">Learn More</button>
                 </div>
             </div>
             <!-- Add other portfolio items here if needed -->
         </div>
     </section>
+
+    <!-- Slide-in Panel -->
+    <div id="detailsPanel" class="details-panel">
+        <div class="details-content">
+            <span class="close-btn" onclick="closeDetails()">&times;</span>
+            <h3>Eversafe UK Limited</h3>
+            <p>Eversafe UK Limited offers comprehensive fire protection services. We developed a responsive and modern website that aligns with their brand identity and created professional business cards to strengthen their brand presence.</p>
+            <a href="https://www.eversafeuk.co.uk" target="_blank" class="btn">Visit Eversafe UK</a>
+        </div>
+    </div>
 
     <section id="contact" class="contact">
         <h2>Contact Us</h2>
@@ -281,6 +310,16 @@
     <footer>
         <p>&copy; 2024 Amber Creative Studio. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openDetails() {
+            document.getElementById('detailsPanel').classList.add('open');
+        }
+
+        function closeDetails() {
+            document.getElementById('detailsPanel').classList.remove('open');
+        }
+    </script>
 
 </body>
 </html>
