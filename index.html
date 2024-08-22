@@ -5,62 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Creative Studio</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #E3E2DC; /* Secondary color as background */
-            color: #333; /* Darker color for text */
-            text-align: center; /* Center everything */
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #E3E2DC;
+        }
+
         header {
-            background-color: #135176; /* Primary color for the header */
+            background-color: #135176;
             color: #fff;
-            padding: 40px 0; /* Increased padding to accommodate the logo */
+            padding: 20px;
             text-align: center;
-            position: relative;
         }
+
         header img {
+            height: 80px;
             display: block;
-            margin: 0 auto 20px auto; /* Center the logo and add some margin below it */
-            height: 100px; /* Adjust this value to change the size of the logo */
+            margin: 0 auto 15px auto;
         }
-        header h1 {
-            margin: 0;
-            font-size: 3em;
-            font-family: 'Oswald', sans-serif; /* Use Oswald font to match the "Coming Soon" style */
-            font-weight: bold;
-        }
+
         nav {
-            background-color: #135176; /* Primary color for the navigation */
-            padding: 10px;
+            background-color: #135176;
+            padding: 10px 0;
+            text-align: center;
         }
+
         nav a {
-            color: #E3E2DC; /* Secondary color for the links */
+            color: #E3E2DC;
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
+            font-family: 'Oswald', sans-serif;
         }
+
         nav a:hover {
-            color: #fff; /* White color on hover */
+            color: #fff;
         }
-        section {
+
+        .hero {
+            background-image: url('images/hero-background.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background-color: #135176;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0f3a52;
+        }
+
+        .services, .portfolio, .contact {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .services h2, .portfolio h2, .contact h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #135176;
+        }
+
+        .service-items, .portfolio-items {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .service-item, .portfolio-item {
+            background: white;
+            margin: 15px;
             padding: 20px;
+            width: 30%;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
         }
-        .content {
-            max-width: 800px;
+
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .contact form {
+            max-width: 500px;
             margin: 0 auto;
+            text-align: left;
         }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact button {
+            background-color: #135176;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact button:hover {
+            background-color: #0f3a52;
+        }
+
         footer {
-            background-color: #135176; /* Primary color for the footer */
+            background-color: #135176;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 20px 0;
         }
     </style>
 </head>
@@ -69,21 +160,67 @@
     <header>
         <img src="images/logo.png" alt="Amber Creative Studio Logo">
         <h1>Amber Creative Studio</h1>
-        <p>Your partner in creative solutions</p>
     </header>
 
     <nav>
-        <a href="#about">About Us</a>
         <a href="#services">Services</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#contact">Contact</a>
     </nav>
 
-    <section class="content">
-        <h2>Welcome to Amber Creative Studio</h2>
-        <p>
-            We are a creative agency dedicated to helping you build your brand and grow your business. Whether you need a new website, a brand refresh, or a custom design, we are here to provide top-notch services tailored to your needs.
-        </p>
+    <section class="hero">
+        <h1>We Create Stunning Digital Experiences</h1>
+        <p>At Amber Creative Studio, we bring your ideas to life with beautiful design and expert development.</p>
+        <a href="#contact" class="btn">Get Started</a>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-items">
+            <div class="service-item">
+                <h3>Web Design</h3>
+                <p>We craft responsive and visually stunning websites that engage users and drive results.</p>
+            </div>
+            <div class="service-item">
+                <h3>Brand Identity</h3>
+                <p>Our branding services help you establish a strong, memorable presence in your industry.</p>
+            </div>
+            <div class="service-item">
+                <h3>Marketing Strategy</h3>
+                <p>We develop customized marketing strategies to help you reach your target audience effectively.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Our Work</h2>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+                <img src="images/portfolio1.jpg" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>A description of the project goes here.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio2.jpg" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>A description of the project goes here.</p>
+            </div>
+            <div class="portfolio-item">
+                <img src="images/portfolio3.jpg" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>A description of the project goes here.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </section>
 
     <footer>
