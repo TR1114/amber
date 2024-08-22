@@ -147,6 +147,38 @@
             background-color: #0f3a52;
         }
 
+        .social {
+            padding: 50px 20px;
+            background-color: #f8f8f8;
+            text-align: center;
+        }
+
+        .social h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5em;
+            color: #135176;
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: inline-block;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+
         footer {
             background-color: #135176;
             color: #fff;
@@ -221,6 +253,16 @@
             <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+    </section>
+
+    <section id="social" class="social">
+        <h2>Follow Us</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/amber.creativestudio" target="_blank">
+                <img src="images/instagram-icon.png" alt="Instagram">
+            </a>
+            <!-- Add other social media icons here if needed -->
+        </div>
     </section>
 
     <footer>
