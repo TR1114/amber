@@ -160,6 +160,11 @@
             color: #555;
         }
 
+        .portfolio-image {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+
         footer {
             background-color: #135176;
             color: #fff;
@@ -170,6 +175,17 @@
             margin-top: 40px;
         }
 
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons img:hover {
+            transform: scale(1.1);
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -178,7 +194,6 @@
                 opacity: 1;
             }
         }
-
     </style>
 </head>
 <body>
@@ -222,7 +237,7 @@
         <h2>Our Work</h2>
         <div class="cards">
             <div class="card">
-                <h3>Eversafe UK Limited</h3>
+                <img src="images/portfolio1.png" alt="Portfolio Image" class="portfolio-image">
                 <p>We created a fully functioning website in less than 4 weeks and designed branded business cards.</p>
             </div>
             <!-- Add more portfolio items as needed -->
@@ -236,6 +251,11 @@
     </section>
 
     <footer>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/amber.creativestudio" target="_blank">
+                <img src="images/instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
         <p>&copy; 2024 Amber Creative Studio. All rights reserved.</p>
     </footer>
 
