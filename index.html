@@ -63,7 +63,7 @@
             background-image: url('images/hero-background.jpg');
             background-size: cover;
             background-position: center;
-            color: white;
+            color: #135176;
             text-align: center;
             padding: 100px 20px;
             border-radius: 20px;
@@ -133,8 +133,8 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #fff;
+            color: #135176;
+            font-size: 24px;
             padding: 10px;
             border-radius: 50%;
             cursor: pointer;
@@ -313,7 +313,7 @@
             slides[slideIndex - 1].style.display = 'block';
             dots[slideIndex - 1].classList.add('active');
 
-            setTimeout(showSlides, 3000); // Change slide every 3 seconds
+            setTimeout(showSlides, 5000); // Change slide every 5 seconds
         }
 
         function currentSlide(n) {
